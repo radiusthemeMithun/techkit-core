@@ -43,10 +43,10 @@ class RT_Accordion extends Custom_Widget_Base{
             array(
 				'type'    => Controls_Manager::SELECT2,
 				'id'      => 'style',
-				'label'   => esc_html__( 'Accordion Style', 'finbuzz-core' ),
+				'label'   => esc_html__( 'Accordion Style', 'techkit-core' ),
 				'options' => array(
-					'style-1' => esc_html__( 'Style 1' , 'finbuzz-core' ),
-					'style-2' => esc_html__( 'Style 2', 'finbuzz-core' ),
+					'style-1' => esc_html__( 'Style 1' , 'techkit-core' ),
+					'style-2' => esc_html__( 'Style 2', 'techkit-core' ),
 				),
 				'default' => 'style-1',
 			),

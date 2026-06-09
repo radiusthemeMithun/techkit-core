@@ -46,15 +46,15 @@ class Feature_Box extends Custom_Widget_Base {
 				'label'   => esc_html__( 'Alignment', 'techkit-core' ),
 				'options' => array(
 					'left' => array(
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'techkit-core' ),
 						'icon' => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'techkit-core' ),
 						'icon' => 'eicon-text-align-center',
 					),
 					'right' => array(
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'techkit-core' ),
 						'icon' => 'eicon-text-align-right',
 					),
 				),

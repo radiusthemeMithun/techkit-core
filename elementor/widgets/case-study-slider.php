@@ -65,7 +65,7 @@ class RT_Casestudy_Slider extends Custom_Widget_Base {
 			array (
 				'type'      => Controls_Manager::SELECT2,
 				'id'        => 'cat_single',
-				'label'     => esc_html__( 'Categories', 'zugan-core' ),
+				'label'     => esc_html__( 'Categories', 'techkit-core' ),
 				'options'   => $category_dropdown,
 				'default'   => '0',
 				'multiple'  => false,

@@ -78,7 +78,7 @@ $col_class = "col-lg-{$data['col_lg']} col-md-{$data['col_md']} col-sm-{$data['c
 					<?php if ( $data['read_more'] == 'yes' ) { ?>
 						<div class="service-more-button">
 							<a href="<?php the_permalink(); ?>" class="button-style-1 btn-common rt-animation-out" >
-								<?php esc_html_e( 'Discover Now', 'techkit' );?><?php echo radius_arrow_shape(); ?></a>
+								<?php esc_html_e( 'Discover Now', 'techkit-core' );?><?php echo radius_arrow_shape(); ?></a>
 						</div>
 					<?php } ?>			
 				</div>

@@ -23,7 +23,7 @@ class Nav_Menu extends Custom_Widget_Base {
 		$menus = wp_get_nav_menus( array( 'orderby' => 'name', 'order' => 'ASC' ) );
 
 		$menu_items      = array();
-		$menu_items['0'] = __( '---Select---', 'techkit-pro' );
+		$menu_items['0'] = __( '---Select---', 'techkit-core' );
 		foreach ( $menus as $menu ) {
 			$menu_items[$menu->term_id] = $menu->name;
 		}

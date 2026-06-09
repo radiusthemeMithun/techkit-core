@@ -28,16 +28,20 @@ class RTCustomizer extends RTOptimizerHooks implements RTOptionFramework{
 
             $wp_customize->add_panel($section['id'], array(
                 'priority'       => 160,
-                'title'          => __($section['title'], $this->config['TextDomain']),
-                'description'    => __($section['description'], $this->config['TextDomain']),
+                // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- title is provided dynamically from config.
+                'title'          => __($section['title'], 'techkit-core'),
+                // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- description is provided dynamically from config.
+                'description'    => __($section['description'], 'techkit-core'),
             ));
 
             // Section
             foreach($section['sub_sections'] as $sub_sections){
 
                 $wp_customize->add_section($sub_sections['id'], [
-                    'title' => __($sub_sections['title'], $this->config['TextDomain']),
-                    'description' => __($sub_sections['description'], $this->config['TextDomain']),
+                    // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- title is provided dynamically from config.
+                    'title' => __($sub_sections['title'], 'techkit-core'),
+                    // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- description is provided dynamically from config.
+                    'description' => __($sub_sections['description'], 'techkit-core'),
                     'description_hidden' => true,
                     'panel' => $section['id'],
                 ]);
@@ -55,11 +59,13 @@ class RTCustomizer extends RTOptimizerHooks implements RTOptionFramework{
                             $wp_customize,
                             $field['id'],
                             array(
-                                'label'    => __($field['label'], $this->config['TextDomain']),
+                                // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- label is provided dynamically from config.
+                                'label'    => __($field['label'], 'techkit-core'),
                                 'section'  => $sub_sections['id'],
                                 'settings' => $field['id'],
                                 'type'     => $field['type'],
-                                'description' => __($field['description'], $this->config['TextDomain']),
+                                // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- description is provided dynamically from config.
+                                'description' => __($field['description'], 'techkit-core'),
                             )
                         )
                     );

@@ -36,7 +36,8 @@ class RTRedux extends RTOptimizerHooks implements RTOptionFramework{
             
             Redux::setSection( $this->config['ReduxOptionName'], [
                 'id' => $section['id'],
-                'title' => __($section['title'], $this->config['TextDomain']),
+                // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- title is provided dynamically from config.
+                'title' => __($section['title'], 'techkit-core'),
                 'icon' => $section['icon'] ?? 'el el-cogs',
             ] );
 
@@ -45,7 +46,8 @@ class RTRedux extends RTOptimizerHooks implements RTOptionFramework{
 
                 Redux::setSection( $this->config['ReduxOptionName'], [
                     'id' => $sub_section['id'],
-                    'title' => __($sub_section['title'], $this->config['TextDomain']),
+                    // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- title is provided dynamically from config.
+                    'title' => __($sub_section['title'], 'techkit-core'),
                     'icon' => $sub_section['icon'] ?? 'el el-cog',
                     'subsection' => true,
                     'fields' => $sub_section['fields']
