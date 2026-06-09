@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,7 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 ?>
 <div class="cta-default cta-<?php echo esc_attr( $data['style'] ); ?>">

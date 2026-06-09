@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 require_once dirname(__FILE__) . '/data/AttributeInterface.php';
 require_once dirname(__FILE__) . '/data/TagInterface.php';
 require_once dirname(__FILE__) . '/data/AllowedAttributes.php';

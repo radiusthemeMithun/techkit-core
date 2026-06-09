@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,6 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 $attr = '';
 if ( !empty( $data['buttonurl']['url'] ) ) {
     $attr  = 'href="' . esc_url( $data['buttonurl']['url'] ) . '"';

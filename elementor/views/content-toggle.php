@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,7 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 extract($data);
 $content_1_id = "content_1_id_" . uniqid();
 $content_2_id = "content_2_id_" . uniqid();

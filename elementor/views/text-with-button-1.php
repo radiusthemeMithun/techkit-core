@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,7 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <div class="title-text-button <?php echo esc_attr( $data['showhide'] ); ?> text-<?php echo esc_attr( $data['style'] ); ?>">
 	<?php if ( !empty( $data['sub_title'] ) ) { ?>

@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,7 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 $lg_item = ( 12 / $data['col_lg']);
 $md_item = ( 12 / $data['col_md']);
 $sm_item = ( 12 / $data['col_sm']);

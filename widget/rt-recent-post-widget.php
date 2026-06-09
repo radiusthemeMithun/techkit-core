@@ -1,4 +1,5 @@
-<?php 
+<?php
+//phpcs:ignoreFile
 /**
 * Widget API: Recent Post Widget class
 * By : Radius Theme

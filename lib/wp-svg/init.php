@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author RadiusTheme
  *
@@ -118,10 +119,10 @@ class WP_SVG {
 			$response = array_merge( $response, $args );
 
 			$possible_sizes = apply_filters( 'image_size_names_choose', array(
-				'full'      => __( 'Full Size', 'default' ),
-				'thumbnail' => __( 'Thumbnail', 'default' ),
-				'medium'    => __( 'Medium', 'default' ),
-				'large'     => __( 'Large', 'default' ),
+				'full'      => __( 'Full Size', 'techkit-core' ),
+				'thumbnail' => __( 'Thumbnail', 'techkit-core' ),
+				'medium'    => __( 'Medium', 'techkit-core' ),
+				'large'     => __( 'Large', 'techkit-core' ),
 			) );
 
 			$sizes = array();

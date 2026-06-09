@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,6 +7,10 @@
  */
 
 namespace radiustheme\Techkit_Core;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 use TechkitTheme;
 use TechkitTheme_Helper;

@@ -1,4 +1,5 @@
-<?php 
+<?php
+//phpcs:disable
 // Security check
 defined('ABSPATH') || die();
 

@@ -8,6 +8,8 @@ Author: RadiusTheme
 Author URI: https://www.radiustheme.com
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: techkit-core
+Domain Path: /languages
 
 */
 
@@ -37,7 +39,6 @@ class Techkit_Core
 	{
 		$prefix = TECHKIT_CORE_THEME_PREFIX_VAR;
 
-		add_action('plugins_loaded', array($this, 'load_textdomain'), 16);
 		add_action('after_setup_theme', array($this, 'post_meta'), 15);
 		add_action('after_setup_theme', array($this, 'elementor_widgets'));
 		add_action($this->action,       array($this, 'after_theme_loaded'));
@@ -110,10 +111,6 @@ class Techkit_Core
 		}
 	}
 
-	public function load_textdomain()
-	{
-		load_plugin_textdomain($this->plugin, false, dirname(plugin_basename(__FILE__)) . '/languages');
-	}
 	public function post_meta()
 	{
 		if (!did_action($this->action) || !defined('RT_FRAMEWORK_VERSION')) {

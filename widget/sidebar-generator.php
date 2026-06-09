@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -59,8 +62,8 @@ if ( !class_exists( 'TechkitTheme_Sidebar_Generator' ) ) {
 		}
 
 		public function ajax_add_sidebar() {
-			$name  = isset( $_REQUEST['name'] ) ? sanitize_text_field( $_REQUEST['name'] ) : null;
-			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( $_REQUEST['_wpnonce'] ) : null;
+			$name  = isset( $_REQUEST['name'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['name'] ) ) : null;
+			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
 
 			if ( empty( $name ) ) {
 				wp_send_json_error( esc_html__( "Sidebar name can\'t be empty", 'techkit-core' ) );
@@ -106,8 +109,8 @@ if ( !class_exists( 'TechkitTheme_Sidebar_Generator' ) ) {
 		}
 
 		public function ajax_remove_sidebar() {
-			$id    = isset( $_REQUEST['id'] ) ? sanitize_text_field( $_REQUEST['id'] ) : null;
-			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( $_REQUEST['_wpnonce'] ) : null;
+			$id    = isset( $_REQUEST['id'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['id'] ) ) : null;
+			$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
 
 			if ( empty( $id ) ) {
 				wp_send_json_error( esc_html__( 'Sidebar ID not found', 'techkit-core' ) );

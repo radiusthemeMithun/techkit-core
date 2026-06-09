@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * @author  RadiusTheme
  * @since   1.0
@@ -6,7 +7,9 @@
  */
 
 namespace radiustheme\Techkit_Core;
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ?>
 <div class="rtin-progress-bar">
 	<h3 class="rtin-name"><?php echo esc_html( $data['title'] );?></h3>

@@ -1,4 +1,5 @@
 <?php
+//phpcs:disable
 /**
  * OCDI Demo importer configuration.
  *

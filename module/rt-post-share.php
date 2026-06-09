@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 function techkit_post_share() {
 
 	if( get_post_type() != 'page' ) { 

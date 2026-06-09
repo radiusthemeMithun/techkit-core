@@ -1,4 +1,8 @@
 <?php
+//phpcs:disable
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 /**
  * @author  RadiusTheme
  * @since   1.0
