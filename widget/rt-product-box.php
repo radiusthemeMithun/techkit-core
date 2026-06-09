@@ -67,7 +67,7 @@ Class TechkitTheme_Product_Box extends WP_Widget {
 		?>
 		<?php echo wp_kses_post($args['before_widget']); ?>
 		<?php if ( $title ) {
-			echo wp_kses_post($args['before_title']) . $title . wp_kses_post($args['after_title']);
+			echo wp_kses_post($args['before_title']) . esc_html( $title ) . wp_kses_post($args['after_title']);
 		} ?>
 		<div class="post-box-style <?php if ( $select_style == 'box-style-2' ) { ?>row<?php } ?>">
 		<?php while ( $result_query->have_posts() ) : $result_query->the_post(); ?>
@@ -106,7 +106,7 @@ Class TechkitTheme_Product_Box extends WP_Widget {
 						</h3>
 						<?php if ( $show_price ) { ?>
 						<div class="widget-product-price">
-							<?php $product_price = wc_get_product( get_the_ID() ); echo $product_price->get_price_html(); ?>
+							<?php $product_price = wc_get_product( get_the_ID() ); echo wp_kses_post( $product_price->get_price_html() ); ?>
 						</div>
 						<?php } ?>
 					</div>
@@ -148,7 +148,7 @@ Class TechkitTheme_Product_Box extends WP_Widget {
 						</h3>
 						<?php if ( $show_price ) { ?>
 						<div class="widget-product-price">
-							<?php $product_price = wc_get_product( get_the_ID() ); echo $product_price->get_price_html(); ?>
+							<?php $product_price = wc_get_product( get_the_ID() ); echo wp_kses_post( $product_price->get_price_html() ); ?>
 						</div>
 						<?php } ?>
 					</div>

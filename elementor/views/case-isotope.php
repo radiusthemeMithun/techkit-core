@@ -102,7 +102,7 @@ $col_class = "col-lg-{$data['col_lg']} col-md-{$data['col_md']} col-sm-{$data['c
 									if ( !empty( TechkitTheme::$options['no_preview_image']['id'] ) ) {
 										echo wp_get_attachment_image( TechkitTheme::$options['no_preview_image']['id'], $thumb_size );
 									} else {
-										echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img( 'noimage_442X500.jpg' ) . '" alt="'.get_the_title().'">';
+										echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_442X500.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 									}
 								}
 							?>
@@ -135,7 +135,7 @@ $col_class = "col-lg-{$data['col_lg']} col-md-{$data['col_md']} col-sm-{$data['c
 	</div>    
 	<?php if ( $data['more_button'] == 'show' ) { ?>
 	<?php if ( !empty( $data['see_button_text'] ) ) { ?>
-	<div class="case-button"><a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['see_button_link'] );?>"><?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); ?></a>
+	<div class="case-button"><a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['see_button_link'] );?>"><?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
     </div>
 	<?php } } ?>      
 </div>

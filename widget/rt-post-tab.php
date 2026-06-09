@@ -28,13 +28,13 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 		
 		$select_style = ( !empty( $instance['select_style'] ) ) ? $instance['select_style'] : 'box-style-1';
 		$show_no_preview_img = ( !empty( $instance['show_no_preview_img'] ) ) ? $instance['show_no_preview_img'] : 'none';
-		$tab_id = time() + rand(1, 1000);
+		$tab_id = time() + wp_rand(1, 1000);
 		?>
 		
 		
 		<?php echo wp_kses_post($args['before_widget']); ?>
 		<?php if ( $title ) {
-			echo wp_kses_post($args['before_title']) . $title . wp_kses_post($args['after_title']);
+			echo wp_kses_post($args['before_title']) . esc_html( $title ) . wp_kses_post($args['after_title']);
 		} ?>
 
 		<div class="post-tab-layout">
@@ -84,7 +84,7 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 									<div class="post-box-date">
 										<ul>
 											<?php if ( $show_date ) { ?>
-											<li><?php echo get_the_time( get_option( 'date_format' ) ); ?></li>
+											<li><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></li>
 											<?php } if ( $show_cat ) { ?>
 											<li><?php
 												$i = 1;
@@ -149,7 +149,7 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 									<div class="post-box-date">
 										<ul>
 											<?php if ( $show_date ) { ?>
-											<li><?php echo get_the_time( get_option( 'date_format' ) ); ?></li>
+											<li><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></li>
 											<?php } if ( $show_cat ) { ?>
 											<li><?php
 												$i = 1;
@@ -212,7 +212,7 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 									<div class="post-box-date">
 										<ul>
 											<?php if ( $show_date ) { ?>
-											<li><?php echo get_the_time( get_option( 'date_format' ) ); ?></li>
+											<li><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></li>
 											<?php } if ( $show_cat ) { ?>
 											<li><?php
 												$i = 1;

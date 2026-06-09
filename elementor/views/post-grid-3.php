@@ -64,13 +64,13 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 									if ( !empty( TechkitTheme::$options['no_preview_image']['id'] ) ) {
 										echo wp_get_attachment_image( TechkitTheme::$options['no_preview_image']['id'], $thumb_size1 );
 									} else {
-										echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img( 'noimage_600X342.jpg' ) . '" alt="'.get_the_title().'">';
+										echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_600X342.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 									}
 								}
 							?>
 						</a>
 						<?php if ( $data['post_grid_category'] == 'yes' ) { ?>
-						<span class="blog-cat"><?php echo the_category( ', ' );?></span>
+						<span class="blog-cat"><?php the_category( ', ' );?></span>
 						<?php } ?>
 					</div>
 					<div class="rtin-content">
@@ -82,7 +82,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 							<?php if ( $data['post_grid_author'] == 'yes' ) { ?>
 							<li class="item-author"><i class="far fa-user"></i><?php esc_html_e( 'by ', 'techkit-core' );?><?php the_author_posts_link(); ?></li>			
 							<?php } if ( $data['post_grid_comment'] == 'yes' ) { ?>
-							<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo get_comments_link( get_the_ID() ); ?>"><?php echo wp_kses_post( $techkit_comments_html );?></a></li>
+							<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo esc_url( get_comments_link( get_the_ID() ) ); ?>"><?php echo wp_kses_post( $techkit_comments_html );?></a></li>
 							<?php } ?>
 						</ul>
 						<?php } ?>
@@ -93,7 +93,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 						<?php } ?>
 						<?php if ( $data['read_display'] == 'yes' ) { ?>
 						<a href="<?php the_permalink(); ?>" class="button-style-1 btn-common rt-animation-out" >
-								<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+								<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 						<?php } ?>
 					</div>
 				</div>
@@ -114,7 +114,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 								if ( !empty( TechkitTheme::$options['no_preview_image']['id'] ) ) {
 									echo wp_get_attachment_image( TechkitTheme::$options['no_preview_image']['id'], $thumb_size2 );
 								} else {
-									echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img( 'noimage_400X400.jpg' ) . '" alt="'.get_the_title().'">';
+									echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_400X400.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 								}
 							}
 						?>
@@ -129,7 +129,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 						<?php if ( $data['post_grid_author'] == 'yes' ) { ?>
 						<li class="item-author"><i class="far fa-user"></i><?php esc_html_e( 'by ', 'techkit-core' );?><?php the_author_posts_link(); ?></li>
 						<?php } if ( $data['post_grid_comment'] == 'yes' ) { ?>
-						<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo get_comments_link( get_the_ID() ); ?>"><?php echo wp_kses_post( $techkit_comments_html );?></a></li>
+						<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo esc_url( get_comments_link( get_the_ID() ) ); ?>"><?php echo wp_kses_post( $techkit_comments_html );?></a></li>
 						<?php } ?>
 					</ul>
 					<?php } ?>
@@ -137,7 +137,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 					<h3 class="rtin-title"><a href="<?php the_permalink();?>"><?php echo esc_html( $small_title );?></a></h3>						
 					<?php if ( $data['read_display'] == 'yes' ) { ?>
 					<a href="<?php the_permalink(); ?>" class="button-style-1 btn-common rt-animation-out" >
-								<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+								<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 					<?php } ?>
 				</div>
 			</div>

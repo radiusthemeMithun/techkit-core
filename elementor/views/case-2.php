@@ -76,11 +76,11 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 							if ( !empty( TechkitTheme::$options['no_preview_image']['id'] ) ) {
 								echo wp_get_attachment_image( TechkitTheme::$options['no_preview_image']['id'], $thumb_size );
 							} else {
-								echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img( 'noimage_370X328.jpg' ) . '" alt="'.get_the_title().'">';
+								echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_370X328.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 							}
 						}
 					?>
-					<a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" class="techkit-popup-zoom img-popup-icon" title="<?php echo get_the_title(); ?>"><i class="fas fa-search"></i></a>
+					<a href="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id() ) ); ?>" class="techkit-popup-zoom img-popup-icon" title="<?php echo esc_attr( get_the_title() ); ?>"><i class="fas fa-search"></i></a>
 					<h3 class="rtin-title"><a href="<?php the_permalink();?>"><?php echo wp_kses( $trim_title , 'alltext_allow' ); ?></a></h3>
 
 					<?php if ( $data['cat_display'] ) { ?>
@@ -99,7 +99,7 @@ $col_class = "col-xl-{$data['col_xl']} col-lg-{$data['col_lg']} col-md-{$data['c
 	</div>
 	<?php if ( $data['more_button'] == 'show' ) { ?>
 	<?php if ( !empty( $data['see_button_text'] ) ) { ?>
-	<div class="case-button"><a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['see_button_link'] );?>"><?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); ?></a></div>
+	<div class="case-button"><a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['see_button_link'] );?>"><?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a></div>
 	<?php } ?>
 	<?php } else { ?>
 		<?php TechkitTheme_Helper::pagination(); ?>

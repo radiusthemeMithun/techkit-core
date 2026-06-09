@@ -19,7 +19,7 @@ namespace radiustheme\Techkit_Core;
 	<div class="rtin-content <?php echo esc_attr( $data['animation'] );?> <?php echo esc_attr( $data['animation_effect'] );?>" data-wow-delay="1.6s" data-wow-duration="1s"><?php echo wp_kses_post( $data['content'] );?></div>
 	<?php if ( $data['button_display']  == 'yes' ) { ?>
     <div class="<?php echo esc_attr( $data['animation'] );?> <?php echo esc_attr( $data['animation_effect'] );?>" data-wow-delay="1.6s" data-wow-duration="1s">
-		<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+		<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
       </div>
 	<?php } ?>
 </div>

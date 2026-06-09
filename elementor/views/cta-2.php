@@ -21,12 +21,12 @@ namespace radiustheme\Techkit_Core;
 			<div class="rtin-button">
 				<?php if( !empty( $data['buttontext'] ) ) { ?>
 				<div class="item1">
-					<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+					<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 				</div>
 				<?php } ?>
 				<?php if( !empty( $data['buttontext'] ) ) { ?>
 				<div class="item2">
-					<a class="button-style-3 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl2']['url'] );?>"><?php echo esc_html( $data['buttontext2'] );?><?php echo radius_arrow_shape(); ?></a>
+					<a class="button-style-3 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl2']['url'] );?>"><?php echo esc_html( $data['buttontext2'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 				</div>
 				<?php } ?>
 			</div>

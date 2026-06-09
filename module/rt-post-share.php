@@ -125,7 +125,7 @@ function techkit_post_share() {
 
 		if( is_array( $active_share_buttons ) && ! empty( $active_share_buttons ) ){ ?>
 			<div class="share-links <?php echo esc_attr( $share_class ) ?>">
-				<?php echo implode( '', $active_share_buttons ); ?>
+				<?php echo wp_kses_post( implode( '', $active_share_buttons ) ); ?>
 			</div>
 		<?php
 		}

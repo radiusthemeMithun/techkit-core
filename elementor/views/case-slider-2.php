@@ -71,11 +71,11 @@ $slider_dot_class = $data['slider_dots'] == 'yes' ? ' slider-dot-enabled' : '';
 							if ( !empty( TechkitTheme::$options['no_preview_image']['id'] ) ) {
 								echo wp_get_attachment_image( TechkitTheme::$options['no_preview_image']['id'], $thumb_size );
 							} else {
-								echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img( 'noimage_370X328.jpg' ) . '" alt="'.get_the_title().'">';
+								echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_370X328.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 							}
 						}
 					?>
-					<a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" class="techkit-popup-zoom img-popup-icon" title="<?php echo get_the_title(); ?>"><i class="fas fa-search"></i></a>
+					<a href="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id() ) ); ?>" class="techkit-popup-zoom img-popup-icon" title="<?php echo esc_attr( get_the_title() ); ?>"><i class="fas fa-search"></i></a>
 					<h3 class="rtin-title"><a href="<?php the_permalink();?>"><?php echo wp_kses( $trim_title , 'alltext_allow' ); ?></a></h3>
 
 					<?php if ( $data['cat_display'] ) { ?>

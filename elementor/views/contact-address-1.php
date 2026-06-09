@@ -38,7 +38,7 @@ namespace radiustheme\Techkit_Core;
 
 				<?php if ( !empty( $data['buttontext'] ) ){ ?>
 					<div class="rtin-button">
-						<a class="button-style-3 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+						<a class="button-style-3 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 					</div>		
 				<?php } ?>
 			</div>

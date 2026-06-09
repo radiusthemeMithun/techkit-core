@@ -63,7 +63,7 @@ Class TechkitTheme_Feature_Post extends WP_Widget {
 		?>
 		<?php echo wp_kses_post($args['before_widget']); ?>
 		<?php if ( $title ) {
-			echo wp_kses_post($args['before_title']) . $title . wp_kses_post($args['after_title']);
+			echo wp_kses_post($args['before_title']) . esc_html( $title ) . wp_kses_post($args['after_title']);
 		} ?>
 		<div class="feature-post-layout">
 		<?php while ( $result_query->have_posts() ) {
@@ -90,7 +90,7 @@ Class TechkitTheme_Feature_Post extends WP_Widget {
 					<div class="post-box-date">
 						<ul>
 							<?php if ( $show_date ) { ?>
-							<li class="feature-date"><?php echo get_the_time( get_option( 'date_format' ) ); ?></li>
+							<li class="feature-date"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></li>
 							<?php } if ( $show_cat ) { ?>
 							<li><?php
 								$i = 1;
@@ -106,7 +106,7 @@ Class TechkitTheme_Feature_Post extends WP_Widget {
 					<h3 class="entry-title">
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
 					</h3>
-					<p><?php echo wp_trim_words( get_the_content(), 15, '' ); ?></p>
+					<p><?php echo esc_html( wp_trim_words( get_the_content(), 15, '' ) ); ?></p>
 				</div>
 			</div>
 			<?php } else { ?>
@@ -116,7 +116,7 @@ Class TechkitTheme_Feature_Post extends WP_Widget {
 					<div class="post-box-date">
 						<ul>
 							<?php if ( $show_date ) { ?>
-							<li class="feature-date"><?php echo get_the_time( get_option( 'date_format' ) ); ?></li>
+							<li class="feature-date"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></li>
 							<?php } if ( $show_cat ) { ?>
 							<li><?php
 								$i = 1;

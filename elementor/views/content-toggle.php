@@ -89,16 +89,16 @@ if ( is_string( $icon_class4['value'] ) && $dynamic_icon_class =  $icon_class4['
 
 	<div class="tab-content" data-id="myTabContent">
 	  <div class="tab-pane fade active show" id="<?php echo esc_attr( $content_1_id ); ?>" role="tabpanel">
-	  	<?php print( $content_1 ); ?>
+	  	<?php print( $content_1 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- rendered Elementor builder content, already escaped by Elementor. ?>
 	  </div>
 	  <div class="tab-pane fade" id="<?php echo esc_attr( $content_2_id ); ?>" role="tabpanel">
-	  	<?php print( $content_2 ); ?>
+	  	<?php print( $content_2 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- rendered Elementor builder content, already escaped by Elementor. ?>
 	  </div>
 	  <div class="tab-pane fade" id="<?php echo esc_attr( $content_3_id ); ?>" role="tabpanel">
-	  	<?php print( $content_3 ); ?>
+	  	<?php print( $content_3 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- rendered Elementor builder content, already escaped by Elementor. ?>
 	  </div>
 	  <div class="tab-pane fade" id="<?php echo esc_attr( $content_4_id ); ?>" role="tabpanel">
-	  	<?php print( $content_4 ); ?>
+	  	<?php print( $content_4 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- rendered Elementor builder content, already escaped by Elementor. ?>
 	  </div>
 	</div>
 </div> 

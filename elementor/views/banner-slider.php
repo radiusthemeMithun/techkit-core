@@ -42,12 +42,12 @@ foreach ( $data['banner_lists'] as $banner_list ) {
                     <div class="single-slider" data-bg-image="<?php echo esc_attr($banner['img']); ?>">
                         <div class="container-fluid">
                             <div class="slider-content">
-                                <div class="sub-title"><?php echo $banner['slider_sub_title']; ?></div>
-                                <h2 class="slider-title <?php echo esc_attr( $data['title_align'] );?>"><?php echo $banner['slider_title']; ?></h2>
-                                <div class="slider-text <?php echo esc_attr( $data['text_align'] );?>"><?php echo $banner['slider_text']; ?></div>
+                                <div class="sub-title"><?php echo wp_kses_post( $banner['slider_sub_title'] ); ?></div>
+                                <h2 class="slider-title <?php echo esc_attr( $data['title_align'] );?>"><?php echo wp_kses_post( $banner['slider_title'] ); ?></h2>
+                                <div class="slider-text <?php echo esc_attr( $data['text_align'] );?>"><?php echo wp_kses_post( $banner['slider_text'] ); ?></div>
                                 <?php if ( $data['button_display']  == 'yes' ) { ?>
                                 <div class="slider-btn-area">
-                                    <a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $banner['button_url'] ); ?>"><?php echo wp_kses( $banner['button_text'], 'alltext_allow' ); ?><?php echo radius_arrow_shape(); ?></a>
+                                    <a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $banner['button_url'] ); ?>"><?php echo wp_kses( $banner['button_text'], 'alltext_allow' ); ?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
                                 </div>
                                 <?php } ?>
                             </div>

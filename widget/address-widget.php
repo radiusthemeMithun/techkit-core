@@ -18,7 +18,7 @@ class TechkitTheme_Address_Widget extends WP_Widget {
 		echo wp_kses_post( $args['before_widget'] );
 		if ( !empty( $instance['title'] ) ) {
 			$html = apply_filters( 'widget_title', $instance['title'] );
-			echo $html = $args['before_title'] . $html .$args['after_title'];
+			echo wp_kses_post( $args['before_title'] ) . esc_html( $html ) . wp_kses_post( $args['after_title'] );
 		}
 		else {
 			$html = '';

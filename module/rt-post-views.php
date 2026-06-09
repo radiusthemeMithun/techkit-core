@@ -73,7 +73,7 @@ if( ! class_exists( 'RT_POST_VIEWS' )){
 		 */
 		function _posts_custom_column_views( $column_name, $id ){
 			if( $column_name === 'post_view' ){
-				echo techkit_views( '', get_the_ID() );
+				echo wp_kses_post( techkit_views( '', get_the_ID() ) );
 			}
 		}
 	}

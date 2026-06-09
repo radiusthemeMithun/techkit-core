@@ -60,7 +60,7 @@ if ( is_array( $icon_class['value'] ) ) {
 		<?php if ( $data['button_display']  == 'yes' && $data['buttontext'] ) { ?>
 			<div class="rtin-button">
 				<a href="<?php echo esc_url( $data['buttonurl']['url'] );?>" class="button-style-1 btn-common rt-animation-out" >
-						<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+						<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 	        </div>		
 		<?php } ?>
 	</div>

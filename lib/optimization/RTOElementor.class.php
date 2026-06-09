@@ -76,7 +76,7 @@ class RTOElementor{
                 }
             </style>
         <?php
-        echo ob_get_clean();
+        echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static inline <style> block with no dynamic data.
 
     }
 

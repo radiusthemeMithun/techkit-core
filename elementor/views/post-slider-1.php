@@ -56,13 +56,13 @@ $slider_dot_class = $data['slider_dots'] == 'yes' ? ' slider-dot-enabled' : '';
 									if (!empty(TechkitTheme::$options['no_preview_image']['id'])) {
 										echo wp_get_attachment_image(TechkitTheme::$options['no_preview_image']['id'], $thumb_size);
 									} else {
-										echo '<img class="wp-post-image" src="' . TechkitTheme_Helper::get_img('noimage_370X435.jpg') . '" alt="' . get_the_title() . '">';
+										echo '<img class="wp-post-image" src="' . esc_url( TechkitTheme_Helper::get_img( 'noimage_370X435.jpg' ) ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 									}
 								}
 								?>
 							</a>
 							<?php if ($data['post_grid_category'] == 'yes') { ?>
-								<span class="blog-cat"><?php echo the_category(', '); ?></span>
+								<span class="blog-cat"><?php the_category(', '); ?></span>
 							<?php } ?>
 						</div>
 						<div class="rtin-content">
@@ -79,7 +79,7 @@ $slider_dot_class = $data['slider_dots'] == 'yes' ? ' slider-dot-enabled' : '';
 										<li class="item-author"><i class="far fa-user"></i><?php esc_html_e('by ', 'techkit-core'); ?><?php the_author_posts_link(); ?></li>
 									<?php }
 									if ($data['post_grid_comment'] == 'yes') { ?>
-										<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo get_comments_link(get_the_ID()); ?>"><?php echo wp_kses_post($techkit_comments_html); ?></a></li>
+										<li class="item-comment"><i class="far fa-comments"></i><a href="<?php echo esc_url( get_comments_link( get_the_ID() ) ); ?>"><?php echo wp_kses_post($techkit_comments_html); ?></a></li>
 									<?php } ?>
 								</ul>
 							<?php } ?>

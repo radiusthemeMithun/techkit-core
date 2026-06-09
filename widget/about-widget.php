@@ -18,7 +18,7 @@ class TechkitTheme_About_Widget extends WP_Widget {
 		echo wp_kses_post( $args['before_widget'] );
 		if ( !empty( $instance['title'] ) ) {
 			$html = apply_filters( 'widget_title', $instance['title'] );
-			echo $html = $args['before_title'] . $html .$args['after_title'];
+			echo wp_kses_post( $args['before_title'] ) . esc_html( $html ) . wp_kses_post( $args['after_title'] );
 		}
 		else {
 			$html = '';
@@ -28,7 +28,7 @@ class TechkitTheme_About_Widget extends WP_Widget {
 
 		?>
 		
-		<div class="author-widget" style="background-image: url(<?php echo wp_get_attachment_image_url($instance['bg_image'],'full') ; ?>)">
+		<div class="author-widget" style="background-image: url(<?php echo esc_url( wp_get_attachment_image_url( $instance['bg_image'], 'full' ) ); ?>)">
 			<?php	
 			if( !empty( $instance['ab_image'] ) ){
 				?><span><?php echo wp_kses( $img, 'alltext_allow' ); ?></span><?php

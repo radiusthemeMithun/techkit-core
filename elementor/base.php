@@ -80,11 +80,11 @@ abstract class Custom_Widget_Base extends Widget_Base {
 
 	public function rt_template( $template, $data ) {
 		$template_name = "/elementor-custom/views/{$template}.php";
-		if ( file_exists( STYLESHEETPATH . $template_name ) ) {
-			$file = STYLESHEETPATH . $template_name;
+		if ( file_exists( get_stylesheet_directory() . $template_name ) ) {
+			$file = get_stylesheet_directory() . $template_name;
 		}
-		elseif ( file_exists( TEMPLATEPATH . $template_name ) ) {
-			$file = TEMPLATEPATH . $template_name;
+		elseif ( file_exists( get_template_directory() . $template_name ) ) {
+			$file = get_template_directory() . $template_name;
 		}
 		else {
 			$file = __DIR__ . "/views/{$template}.php";
@@ -92,6 +92,7 @@ abstract class Custom_Widget_Base extends Widget_Base {
 
 		ob_start();
 		include $file;
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output is rendered HTML from the template; values are escaped within the template itself.
 		echo ob_get_clean();
 	}
 }

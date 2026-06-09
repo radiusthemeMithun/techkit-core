@@ -20,7 +20,7 @@ namespace radiustheme\Techkit_Core;
 		<p><?php echo wp_kses_post( $data['content'] );?></p>
 		<?php } ?>			
 		<div class="rtin-button">
-			<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+			<a class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $data['buttonurl']['url'] );?>"><?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 	        </div>		
 	</div>
 </div>

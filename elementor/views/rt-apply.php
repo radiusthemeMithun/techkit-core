@@ -26,7 +26,7 @@ extract($data);
 				<span class="item">Type:<span class="primary-text-color"><?php echo wp_kses_post( $rtapply['job_type'] ); ?></span></span>
 			</div>
 			<div class="job-button">
-				<a target="_<?php echo esc_attr( $data['button_window'] ); ?>" class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $rtapply['buttonurl']['url'] );?>"><?php echo esc_html( $rtapply['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+				<a target="_<?php echo esc_attr( $data['button_window'] ); ?>" class="button-style-2 btn-common rt-animation-out" href="<?php echo esc_url( $rtapply['buttonurl']['url'] );?>"><?php echo esc_html( $rtapply['buttontext'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 			</div>
 		</div>
 	</div>

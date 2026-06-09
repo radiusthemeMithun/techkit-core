@@ -84,7 +84,7 @@ $col_class = "col-lg-{$data['col_lg']} col-md-{$data['col_md']} col-sm-{$data['c
 		<?php if ( !empty( $data['see_button_text'] ) ) { ?>
 		<div class="service-button">
 				<a href="<?php echo esc_url( $data['see_button_link'] );?>" class="button-style-2 btn-common rt-animation-out" >
-					<?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); ?></a>
+					<?php echo esc_html( $data['see_button_text'] );?><?php echo radius_arrow_shape(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- returns trusted static SVG markup. ?></a>
 			</div>
 		<?php } ?>
 	<?php } else { ?>

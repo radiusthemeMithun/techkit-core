@@ -35,7 +35,7 @@ Class TechkitTheme_Recent_Posts_With_Image_Widget extends WP_Widget {
 		?>
 		<?php echo wp_kses_post($args['before_widget']); ?>
 		<?php if ( $title ) {
-			echo wp_kses_post($args['before_title']) . $title . wp_kses_post($args['after_title']);
+			echo wp_kses_post($args['before_title']) . esc_html( $title ) . wp_kses_post($args['after_title']);
 		} ?>
 		<div class="row">
 		<?php while ( $result_query->have_posts() ) : $result_query->the_post();
@@ -60,7 +60,7 @@ Class TechkitTheme_Recent_Posts_With_Image_Widget extends WP_Widget {
 						?>
 					</a>
 					<?php if ( $show_date ) { ?>
-					<div class="posted-date"><i class="far fa-calendar-alt"></i><?php echo get_the_time( get_option( 'date_format' ) ); ?></div>
+					<div class="posted-date"><i class="far fa-calendar-alt"></i><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></div>
 					<?php } ?>
 					<h3 class="widget-recent-post-title">
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
