@@ -118,10 +118,10 @@ class WP_SVG {
 			$response = array_merge( $response, $args );
 
 			$possible_sizes = apply_filters( 'image_size_names_choose', array(
-				'full'      => __( 'Full Size' ),
-				'thumbnail' => __( 'Thumbnail' ),
-				'medium'    => __( 'Medium' ),
-				'large'     => __( 'Large' ),
+				'full'      => __( 'Full Size', 'default' ),
+				'thumbnail' => __( 'Thumbnail', 'default' ),
+				'medium'    => __( 'Medium', 'default' ),
+				'large'     => __( 'Large', 'default' ),
 			) );
 
 			$sizes = array();

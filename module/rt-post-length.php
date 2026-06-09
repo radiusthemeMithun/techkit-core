@@ -21,12 +21,14 @@ if( !function_exists( 'techkit_reading_time' )){
 			$result = esc_html__ ( 'Less than a minute', 'techkit-core' );
 		}
 		elseif( $reading_time > 60 ){
-			$result = sprintf( esc_html__( '%s hours read' ), floor( $reading_time / 60 ) );
+			/* translators: %s: number of hours it takes to read the post. */
+			$result = sprintf( esc_html__( '%s hours read', 'techkit-core' ), floor( $reading_time / 60 ) );
 		}
 		else if ( $reading_time == 1 ){
-			$result = esc_html__( '1min read' );
+			$result = esc_html__( '1min read', 'techkit-core' );
 		} else {
-			$result = sprintf( esc_html__( '%smins read' ), $reading_time );
+			/* translators: %s: number of minutes it takes to read the post. */
+			$result = sprintf( esc_html__( '%smins read', 'techkit-core' ), $reading_time );
 		}
 
 		return '<span class="meta-reading-time meta-item">'. $result .'</span> ';
