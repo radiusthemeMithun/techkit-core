@@ -1,0 +1,46 @@
+<?php
+/**
+ * @author  RadiusTheme
+ * @since   1.0
+ * @version 1.0
+ */
+
+namespace radiustheme\Techkit_Core;
+use TechkitTheme_Helper;
+use Elementor\Utils;
+use Elementor\Group_Control_Image_Size;
+extract($data);
+
+$attr = '';
+if ( !empty( $data['buttonurl']['url'] ) ) {
+	$attr  = 'href="' . $data['buttonurl']['url'] . '"';
+	$attr .= !empty( $data['buttonurl']['is_external'] ) ? ' target="_blank"' : '';
+	$attr .= !empty( $data['buttonurl']['nofollow'] ) ? ' rel="nofollow"' : '';
+	$title = '<a ' . $attr . '>' . $data['title'] . '</a>';
+	
+}
+else {
+	$title = $data['title'];
+}
+
+?>
+<div class="feature-box feature-<?php echo esc_attr( $data['style'] );?> <?php echo esc_attr( $data['animation'] );?> <?php echo esc_attr( $data['animation_effect'] );?>" data-wow-delay="<?php echo esc_attr( $data['delay'] );?>s" data-wow-duration="<?php echo esc_attr( $data['duration'] );?>s">
+	<div class="rtin-item">		
+		<div class="rtin-content">
+			<?php if ( !empty( $data['serial_no'] ) ) { ?>
+			<span class="rtin-number"><?php echo wp_kses_post( $serial_no );?></span>
+			<?php } if ( !empty( $data['title'] ) ) { ?>
+			<h3 class="rtin-title"><?php echo wp_kses_post( $title );?></h3>
+			<?php } if ( !empty( $data['content'] ) ) { ?>
+			<div class="rtin-text"><?php echo wp_kses_post( $data['content'] );?></div>
+			<?php } ?>
+			
+			<?php if ( $data['button_display']  == 'yes' && $data['buttontext'] ) { ?>
+				<div class="rtin-button">
+					<a href="<?php echo esc_url( $data['buttonurl']['url'] );?>" class="button-style-1 btn-common rt-animation-out" >
+						<?php echo esc_html( $data['buttontext'] );?><?php echo radius_arrow_shape(); ?></a>
+	            </div>		
+			<?php } ?>
+		</div>
+	</div>
+</div>
