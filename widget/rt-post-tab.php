@@ -40,17 +40,17 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 		<div class="post-tab-layout">
 			<ul class="btn-tab item-inline2 block-xs nav nav-tabs" role="tablist">
 				<li class="nav-item">
-					<a href="#recent-<?php esc_html_e( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="true" class="active"><?php esc_html_e('Recent', 'techkit-core'); ?></a>
+					<a href="#recent-<?php echo esc_html( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="true" class="active"><?php esc_html_e('Recent', 'techkit-core'); ?></a>
 				</li>
 				<li class="nav-item">
-					<a href="#popular-<?php esc_html_e( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="false"><?php esc_html_e( 'Popular', 'techkit-core'); ?></a>
+					<a href="#popular-<?php echo esc_html( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="false"><?php esc_html_e( 'Popular', 'techkit-core'); ?></a>
 				</li>
 				<li class="nav-item">
-					<a href="#common-<?php esc_html_e( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="false"><?php esc_html_e( 'Comment', 'techkit-core'); ?></a>
+					<a href="#common-<?php echo esc_html( $tab_id ); ?>" data-bs-toggle="tab" aria-expanded="false"><?php esc_html_e( 'Comment', 'techkit-core'); ?></a>
 				</li>
 			</ul>
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane fade active show" id="recent-<?php esc_html_e( $tab_id ); ?>">
+				<div role="tabpanel" class="tab-pane fade active show" id="recent-<?php echo esc_html( $tab_id ); ?>">
 					<?php
 						$recent_query = new WP_Query( apply_filters( 'widget_posts_args', array(
 							'posts_per_page'      => $number,
@@ -110,7 +110,7 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 					?>										
 				</div>
 				
-				<div role="tabpanel" class="tab-pane fade" id="popular-<?php esc_html_e( $tab_id ); ?>">
+				<div role="tabpanel" class="tab-pane fade" id="popular-<?php echo esc_html( $tab_id ); ?>">
 					<?php
 						$popular_query = new WP_Query( apply_filters( 'widget_posts_args', array(
 							'posts_per_page'      => $number,
@@ -175,7 +175,7 @@ Class TechkitTheme_Post_Tab extends WP_Widget {
 					?>
 				</div>
 				
-				<div role="tabpanel" class="tab-pane fade" id="common-<?php esc_html_e( $tab_id ); ?>">
+				<div role="tabpanel" class="tab-pane fade" id="common-<?php echo esc_html( $tab_id ); ?>">
 				
 					<?php
 						$comment_query = new WP_Query( apply_filters( 'widget_posts_args', array(
