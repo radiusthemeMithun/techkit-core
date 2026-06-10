@@ -3,7 +3,7 @@
 Plugin Name: Techkit Core
 Plugin URI: https://www.radiustheme.com
 Description: Techkit Core Plugin for Techkit Theme
-Version: 2.0
+Version: 2.1
 Author: RadiusTheme
 Author URI: https://www.radiustheme.com
 License: GPL-2.0-or-later
